@@ -120,13 +120,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets/public')
 STATIC_URL = '/static/'
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': '',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'STATS_FILE': BASE_DIR.joinpath('frontend', 'webpack-stats.json')
     }
 }
 
